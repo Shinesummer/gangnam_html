@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+         input[type="text"]:focus, select:focus {
+            border-color: #4a90e2;
+            box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+            outline: none;
+        }
+        #result_text {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            
+            border: none;
+            margin-top: 15px;
+        }
+        input[type="button"] {
+            padding: 10px 20px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.2s ease;
+        }
+    </style>
+    <div>
+        
+        
+        <input type="text" placeholder="수1" id="num1_id" />
+        <select id="sel_oper">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+        </select>
+        <input type="text" placeholder="수2" id="num2_id" />
+        
+        <input type="button" value="전송" onclick="전송()" /></br>
+        <input type="text" placeholder="결과값" id="result_id" />
+    </div>
+
+    <script>
+
+        function 전송() {
+            const inp_num1 = document.getElementById('num1_id').value;
+            const inp_num2 = document.getElementById('num2_id').value;
+            const inp_oper = document.getElementById('sel_oper').value;
+
+            let result;
+
+            switch (inp_oper) {
+                case "+":
+                    result = Number(inp_num1) + Number(inp_num2);
+                    break;
+
+                case "-":
+                    result = Number(inp_num1) - Number(inp_num2);
+
+                    break;
+
+                case "*":
+
+                    result = Number(inp_num1) * Number(inp_num2);
+                    break;
+                case "/":
+
+                    result = Number(inp_num1) / Number(inp_num2);
+                    break;
+
+            }
+            result_id.value = result;
+
+        }
+    </script>
+
+</body>
+
+</html>

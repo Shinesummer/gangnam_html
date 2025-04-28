@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- script 사용 영역 1 (문제가 발생할 수 있음.)-->
+    <script>
+
+
+    </script>
+</head>
+
+<body>
+    <!-- script 사용 영역 2-->
+    <script>
+
+        //변수
+        //var,let, const
+        //데이터타입 변수명 = '값';
+        //데이터타입이 정수, 논리, 문자 다 통일되었음. 그래서 표기 잘하자
+
+        let 변수 = 'aa';
+        let 변수2 = 100;
+
+
+        //출력
+        console.log(변수);
+        console.log(변수2);
+
+        //단, 사용방법을 통일 시켰지만, 문자, 숫자,논리 타입 등이 삭제 된건 아님.
+        console.log(typeof (변수));
+        console.log(typeof (변수2));
+
+
+        //조건
+        if (변수 == 'aa') {
+            console.log('aa가 맞음.')
+        }
+        if (변수2 == 100) {/// ===은 데이터타입도 맞아야된다.
+            console.log('100이 맞음');
+        }
+
+            //       ==============================변환 ======================================
+        let 변수3 = '300';
+        console.log(Number(변수3) + 500); // 숫자 (정수, 실수 모두)
+
+        console.log(parseInt(변수3) + 500); //  숫자 (정수로 변환)
+
+        console.log(parseFloat(변수3) + 41.2);  //실수
+
+        consloe.log(String(200)); //문자로 변환
+
+        const FIN ='정의';
+        
+
+
+    </script>
+
+
+
+</body>
+
+</html>

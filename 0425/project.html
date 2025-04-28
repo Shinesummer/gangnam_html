@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 25px;
+        }
+
+        .chracter {
+            background-image: url(../asset/핑크빈.gif);
+            position: absolute;
+            top: 52%;
+            width: 15%;
+            height: 25%;
+            background-size: 100% 100%;
+            display: flex;
+
+
+        }
+
+        body {
+            background-image: url('../asset/회원가입화면.png');
+            background-position-y: 55%;
+            background-size: 100% 200%;
+            width: 100vw;
+            height: 300vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .loginWin {
+            background-image: url('../asset/로그인화면.png');
+            position: absolute;
+            top: 34%;
+            left: 40%;
+            width: 100%;
+            height: 270%;
+
+            background-size: 100% 100%;
+        }
+
+        .butBox {
+            font-family: 'maplestory_Bold', sans-serif;
+            position: absolute;
+            top: 112%;
+            right: 5%;
+            width: 45%;
+            display: flex;
+            gap: 3%;
+        }
+
+        .table_container {
+            position: absolute;
+            top: 158%;
+            left: 50%;
+
+            display: flex;
+            width: 46%;
+            height: 50%;
+
+
+        }
+
+        form {
+            display: flex;
+            position: absolute;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            height: 100%;
+        }
+
+        .aside {
+            font-family: 'maplestory_Bold', sans-serif;
+            width: 25%;
+            padding-top: 2%;
+            color: rgb(255, 255, 255);
+            font-size: 1.2rem;
+            font-weight: 900;
+
+        }
+
+        td {
+
+            padding: 0;
+            margin: 0;
+            background-color: rgba(255, 255, 255, 0);
+        }
+
+        th,
+        td {
+            border: 2px solid rgba(243, 137, 75, 0.055);
+
+
+        }
+
+        th {
+            text-align: center;
+        }
+
+        .title {
+            font-family: 'maplestory_Bold', sans-serif;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .subMsg {
+            color: white;
+            font-family: 'maplestory_Light', sans-serif;
+            font-size: 0.5rem;
+        }
+
+        @font-face {
+            font-family: 'maplestory_light';
+            src: url('../asset/Maplestory\ Light.ttf') format('woff2');
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'maplestory_Bold';
+            src: url('../asset/Maplestory\ Bold.ttf') format('woff2');
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        input {
+
+            width: 30%;
+            height: 70%;
+
+
+            background: rgba(226, 86, 21, 0.4);
+            /* 배경 투명 */
+            border: none;
+            /* 테두리 제거 */
+            outline: none;
+            /* 포커스 테두리 제거 */
+            color: white;
+            /* 글씨 색상 (배경에 따라 조절) */
+            caret-color: white;
+            /* 커서 색상 (배경에 맞게 조절) */
+            font-size: 1.2rem;
+            /* 텍스트 크기 */
+           
+        }
+      
+        input[type = "checkBox"]{
+            padding: 0%;
+            width: 5%;
+            height: 10%;
+        }input[type = "Email"]{
+            padding: 0%;
+            width: 60%;
+            height: 70%;
+        }input[type = "checkBox"]{
+            padding: 0%;
+            margin-top: 5%;
+            width: 30px;
+            height: 30px;
+        }
+
+
+        .button {
+
+            margin-top: 10px;
+            width: 200%;
+            height: 3%;
+            padding: 1%;
+            display: flex;
+            justify-content: center;
+            background-color: rgba(190, 89, 43, 0.4);
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        textarea {
+            margin-top: 1%;
+            background: transparent;
+            border: none;
+            /* 테두리 제거 */
+            outline: none;
+            /* 포커스 테두리 제거 */
+            color: white;
+            /* 글자색은 흰색 */
+            caret-color: white;
+            /* 커서 색상 */
+            font-size: 1.2rem;
+            /* 글씨 크기 */
+            font-family: 'maplestory_Light', sans-serif;
+            font-family: 'maplestory_Light', sans-serif;
+            width: 100%;
+            height: 100%;
+            color: white;
+        }
+
+        .content {
+            margin-left: 2%;
+            font-family: 'maplestory_Light', sans-serif;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="chracter"></div>
+    <div class="loginWin"></div>
+    <div class="table_container">
+        <form>
+            <table class="table">
+                <tr>
+                    <th colspan="3" class="title">회원가입 정보</th>
+                </tr>
+                <tr>
+                    <th class="aside">아이디 : </th>
+                    <td> <input type="text" id="userId" />
+
+                        <span class="subMsg">4~12자의 영문 대소문자와 숫자로만 입력</span>
+                    </td>
+
+                </tr>
+                <tr>
+                    <th class="aside">비밀번호 : </th>
+                    <td><input type="password" id="userPw" />
+                        <span class="subMsg">4~12자의 영문 대소문자와 숫자로만 입력</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="aside"> 비밀번호 확인 : </th>
+                    <td> <input type="password" id="userPw2" /></td>
+                </tr>
+                <tr>
+                    <th class="aside">메일주소 : </th>
+                    <td><input type="email" id="userEmail" />
+                        <span class="subMsg">예: id@domain.com</span>
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <th class="aside">이름 : </th>
+                    <td> <input type="text" id="userName" /></th>
+                </tr>
+                <tr>
+
+                    <th colspan="3" class="title">개 인 신 상 정 보</th>
+                </tr>
+                <tr>
+                    <th class="aside">주민등록번호 : </th>
+                    <td> <input type="text" id="userNum1" />
+                        <span>-</span>
+                        <input type="password" id="userNum2" />
+                        <span class="subMsg"> 예:980522 -1234567</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="aside">생일 : </th>
+                    <td>
+                        <input type="text" id="userBrith" /><span class="content">년</span>
+                        <select id="month">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                        </select><span class="content">월</span>
+                        <select id="day">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                            <option>13</option>
+                            <option>14</option>
+                            <option>15</option>
+                            <option>16</option>
+                            <option>17</option>
+                            <option>18</option>
+                            <option>19</option>
+                            <option>20</option>
+                            <option>21</option>
+                            <option>22</option>
+                            <option>23</option>
+                            <option>24</option>
+                            <option>25</option>
+                            <option>26</option>
+                            <option>27</option>
+                            <option>28</option>
+                            <option>29</option>
+                            <option>30</option>
+                            <option>31</option>
+                        </select><span class="content">일</span>
+                    </td>
+                </tr>
+                <tr>
+                    <th class="aside">관심분야 : </th>
+                    <td> <input type="checkbox" name="interst" value="컴퓨터" /><span class="content">컴퓨터</span>
+                        <input type="checkbox" class="content" name="interst" value="인터넷" /><span
+                            class="content">인터넷</span>
+                        <input type="checkbox" class="content" name="interst" value="여행" /><span
+                            class="content">여행</span><br/>
+                        <input type="checkbox" class="content" name="interst" value="음악감상" /><span
+                            class="content">음악감상</span>
+                        <input type="checkbox" class="content" name="interst" value="영화감상" /><span
+                            class="content">영화감상</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th class="aside"> 자기소개 : </th>
+                    <td> <textarea></textarea></td>
+                </tr>
+            </table>
+    </div>
+    </form>
+    <div class="butBox">
+        <div class="button" onclick="createID()">회원 가입</div>
+        <div class="button" onclick="resetForm()">다시 입력</div>
+    </div>
+
+    <script>
+
+        function splitChars(str) {
+            return str.split('');
+        }
+        function isValidEmail(email) {
+            const regex = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,4}$/;
+            return regex.test(email);
+        }
+
+
+
+        function createID() {
+            const userID = document.getElementById('userId').value;
+            const pw = document.getElementById('userPw').value;
+            const repw = document.getElementById('userPw2').value;
+            const email = document.getElementById('userEmail').value;
+            const name = document.getElementById('userName').value;
+            const year = document.getElementById('userBrith').value;
+            const month = document.getElementById('month').value;
+            const daySelects = document.querySelectorAll('select')[1];
+            const day = daySelects.value;
+            const userNum1 = document.getElementById('userNum1').value;
+            const userNum2 = document.getElementById('userNum2').value;
+            const inter = document.getElementsByName('interest');
+            let like = '';
+
+            const existingIDs = ['user123', 'admin', 'testuser'];
+
+
+            const splitID = splitChars(userID);
+            if (splitID.length < 4 || splitID.length > 12) {
+                alert("⚠ 아이디는 4~12자 이내로 작성해주세요.");
+                return;
+            }
+            //아이디중복체크
+            if (existingIDs.includes(userID)) {
+                alert("⚠ 이미 존재하는 아이디입니다. 다른 아이디를 입력해주세요.");
+                return;
+            }
+
+            const splitPw = splitChars(pw);
+            if (splitPw.length < 4 || splitPw.length > 12) {
+                alert("비밀번호를 형식에 맞게 작성해주세요.");
+            } else {
+                if (pw !== repw) {
+                    alert("⚠ 비밀번호가 일치하지 않습니다.");
+                    return;
+                }
+                if (userID === "" || pw === "" || email === "" || name === "") {
+                    alert("⚠ 필수 입력값을 모두 입력해주세요.");
+                    return;
+                }
+
+
+                for (let i = 0; i < inter.length; i++) {
+                    if (inter[i].checked) {
+                        like += inter[i].value + ' ';
+                    }
+                }
+            }
+
+            if (isValidEmail(email)) {
+
+            } else {
+                alert("다시입력해주세요.")
+                return;
+            }
+
+            //주민번호 유효성 검사
+            let num1 = splitChars(userNum1);
+            if (num1 == 7) {
+            } else {
+                alert("주민등록번호 앞자리를 다시 입력해주세요.")
+            }
+            for ()
+
+                console.log("이름 : " + name);
+            console.log("아이디 : " + userID);
+            console.log("비밀번호 : " + repw);
+            console.log("E-mail : " + email);
+            console.log("주민등록번호 : " + userNum1 + "-" + userNum2);
+            console.log("생일 : " + year + "/" + month + "/" + day);
+            console.log("관심분야" + like);
+
+
+            alert("축하드립니다!!")
+        }
+        function resetForm() {
+            document.querySelector("form").reset();
+        }
+    </script>
+
+
+</body>
+
+</html>

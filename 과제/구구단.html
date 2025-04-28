@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구구단 출력</title>
+</head>
+<body>
+    <input type="text" placeholder="단수를 입력하세요." id="num_id" />
+    <input type="button" value="클릭" onclick="출력()" />
+    <div id="result_area" style="margin-top: 20px; font-size: 18px; font-family: monospace;"></div>
+
+    <script>
+        function 출력() {
+            const num1 = document.getElementById("num_id").value;
+            const resultArea = document.getElementById("result_area");
+            resultArea.innerHTML = ""; // 이전 결과 초기화
+
+            if (isNaN(num1) || num1.trim() === "") {
+                resultArea.innerHTML = "숫자를 입력해주세요!";
+                return;
+            }
+
+            for (let i = 1; i <= 9; i++) {
+                const line = `${num1} x ${i} = ${num1 * i}`;
+                const p = document.createElement("p");
+                p.textContent = line;
+                resultArea.appendChild(p);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLEX</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .out_box{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        border:  2px solid red;
+        width: 90vw;
+        height: 90vh;
+    }
+    .in_box{
+        border: 1px solid black;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        width: 50px;
+        height: 30px;
+    }
+</style>
+
+</head>
+<body>
+    <div class="out_box">
+        <div class="in_box">버튼</div>
+
+    </div>
+    
+</body>
+</html>

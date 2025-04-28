@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .infoText {
+
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .inputText {
+            width: 80vw;
+            margin-right: 20px;
+            padding: 3px;
+        }
+
+        .showText {
+            border: 1px solid gray;
+            height: 50px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <h1>텍스트 스타일 조정</h1><br />
+        <span class="infoText">텍스트 입력 :</span><br />
+        <input type="text" class="inputText" id="input_Text">
+        <input type="button" value="입력" onclick="input_text_btn()"></br>
+
+        <span class="infoText">텍스트 색상 :</span><br />
+        <input type="radio" name="color"  onchange="colorclick('yellow')">노랑
+        <input type="radio" name="color"  onchange="colorclick('black')">검정
+        <input type="radio" name="color"  onchange="colorclick('green')">초록
+        <input type="radio" name="color"  onchange="colorclick('blue')">파랑
+        <input type="radio" name="color"  onchange="colorclick('red')">빨강</br>
+
+        <span class="infoText">텍스트 스타일 :</span><br />
+        <input type="checkbox"  onclick="굵게(event)">굵게
+        <input type="checkbox"  onclick="기울기(event)">기울기<br />
+
+        <span class="infoText">폰트 크기 :</span><br />
+        <input type="button" id="font_small" value="-" onclick="small()">
+        <span id="font_size">0</span><span> px</span>
+        <input type="button" id="font_big" value="+" onclick="big()"><br />
+    </form>
+    <div class="showText">
+        <span id="target">대상</span>
+    </div>
+
+
+    <script>
+        let target = document.getElementById('target');
+        let fontSize1 = 20;
+        document.getElementById("font_size").textContent = fontSize1;
+
+        function input_text_btn() {
+            let inputText = document.getElementById("input_Text").value;
+            target.textContent = inputText;
+          
+            
+            target.style.fontSize = fontSize1 + "px";
+        }
+        function 기울기(event){                 
+                event.target.checked ? target.style.fontStyle ='italic' : target.style.fontStyle='nomal';
+                  }
+        function 굵게(event){
+            event.target.checked ? target.style.fontWeight = 'bold' : target.style.fontWeight = 'normal';  
+        }
+        function colorclick(color){
+            target.style.color=color;
+        }
+
+
+        function small() {
+            document.getElementById("font_size").textContent = fontSize1;
+            document.getElementById("font_small").textContent = --fontSize1;
+            style.style.fontSize = "fontSize1";
+
+
+        }
+        function big() {
+            document.getElementById("font_size").textContent = fontSize1;
+            document.getElementById("font_small").textContent = ++fontSize1;
+            target.style.fontSize = "fontSize1";
+        } 
+    </script>
+
+</body>
+
+</html>

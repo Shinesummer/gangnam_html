@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0;
+        }
+
+        .out_box {
+            width: 200vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            align-items: start;
+            justify-content: center;
+        }
+
+        .card_box {
+            margin-top: 100px;
+            width: 200vw;
+            height: 500px;
+            margin-left: 20px;
+
+            display: flex;
+            gap: 40px;
+            flex-direction: row;
+            align-items: center;
+            justify-content: start;
+        }
+
+        .card {
+            border: 1px solid rgba(63, 38, 1, 0.2);
+            box-shadow: 8px 8px 15px rgba(63, 38, 1, 0.2);
+            border-radius: 10px;
+
+            width: 300px;
+            height: 450px;
+            display: flex;
+            /* position: relative; */
+            flex-direction: column;
+            align-items: flex-start;
+
+        }
+
+        .card_icon_space {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            width: 300px;
+            height: 200px;
+            background-size: cover;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+           
+        }
+        .card_img1{ 
+            width: 300px;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            background-image: url('https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2F20150329_104%2Fcendy99_1427608371135SOmgD_JPEG%2FDSC00127.JPG&type=a340');
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+
+        }.card_img1:hover{
+            background-image: url('../asset/kuromi.jpeg');
+            background-size: cover;
+        }.card_img2:hover{
+            background-image: url('https://i.pinimg.com/736x/08/6f/fd/086ffdc66dc8a9e5c867d5bf26b2d8f9.jpg');
+            background-size: cover;
+        }.card_img3:hover{
+            background-image: url('https://i.pinimg.com/236x/e2/a8/31/e2a831a40846322742739537c9aaec1c.jpg');
+            background-size: cover;
+        }
+        .card_img2{ 
+            width: 300px;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            background-image: url('https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA5MjBfMTg1%2FMDAxNzI2ODM4MDI4MzU3.Y_acUR05yD21lzprJmZp2ux5dt1r_ym3U9_pjo651QMg.p8elmelgc0e9VAjt09ejnaI-JODBGoG49cS9DaQI3Zgg.JPEG%2FKakaoTalk_20240920_215417946_09.jpg&type=a340');
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+
+        }
+        .card_img3{ 
+            width: 300px;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            background-image: url('https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA5MDFfMjA1%2FMDAxNjYyMDE5MDY5MDg0.v4WfyO51Ieq6q8CRuECyrEnc6IDlEm5KnUPaYpLFTO0g.FFNoWyc5TLw-V8i6HjUlRM4yfYwGpeIjUFCCojzeot4g.PNG.kenberli%2F%25BC%25DB%25C0%25CF%25B1%25B91.PNG&type=a340');
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+
+        }
+
+        .sel_icon_city {
+            background-color: rgb(234, 34, 34);
+            padding-left: 9px;
+            padding-right: 9px;
+            border-radius: 15px;
+            color: white;
+            font-weight: 600;
+            font-size: small;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+        .sel_icon_nature {
+            background-color: rgb(46, 207, 14);
+            padding-left: 9px;
+            padding-right: 9px;
+            border-radius: 15px;
+            color: white;
+            font-weight: 600;
+            font-size: small;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin-left: 10px;
+            margin-top: 10px;
+        }.sel_icon_human {
+            background-color: rgb(21, 128, 204);
+            padding-left: 9px;
+            padding-right: 9px;
+            border-radius: 15px;
+            color: white;
+            font-weight: 600;
+            font-size: small;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+
+        .title {
+            font-size: large;
+            font-weight: 900;
+            text-indent: 30px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .content {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        .heart {
+            font-size: 20px;
+            margin-left: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .divider {
+            width: 90%;
+            margin: 10px auto;
+            border: none;
+            border-top: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .footBox {
+            display: flex;
+            position: relative;
+            gap: 10px;
+           
+            
+        }
+
+
+        .count {
+            margin-top: 3px;
+            font-weight: 700;
+            font-style: italic;
+            font-size: medium;
+            color: rgb(221, 6, 6);
+            margin-left: 10px;
+            margin-right: 100px;
+        }.date{
+            font-weight: 700;
+            font-style: italic;
+            font-size: medium;
+            color: rgb(151, 151, 151);
+           left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="out_box">
+        <div class="card_box">
+            <div class="card">
+                <div class="card_icon_space">
+                    <div class="card_img1"></div>
+                </div>
+                <div class="sel_icon_nature">자연</div>
+                <span class="title">아름다운 전남의 구례</span></br>
+                <span class="content">봄하면 벚꽃으로 유행하지만 구례에는 매화마을로 또다른 매력으로 우리에게 봄을 선물합니다. 이 순간을 함께 나눠보세요.</span></br>
+                <div class="divider"></div>
+                <div class="footBox">
+                    <span class="heart" id="heart1" onclick="likePlus1()">🤍</span>
+                    <span class = "count" id="like_count1">0</span>
+                    <span class="date">2024.04.23</span>
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_icon_space">
+                    <div class="card_img2"></div>
+                </div>
+                <div class="sel_icon_city">도시</div>
+                <span class="title">천년고장 전주</span></br>
+                <span class="content">봄하면 벚꽃으로 유행하지만 구례에는 매화마을로 또다른 매력으로 우리에게 봄을 선물합니다. 이 순간을 함께 나눠보세요.</span></br>
+                <div class="divider"></div>
+                <div class="footBox">
+                    <span class="heart" id="heart2" onclick="likePlus2()">🤍</span>
+                    <span class = "count" id="like_count2">0</span>
+                    <span class="date">2024.04.23</span>
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="card_icon_space">
+                    <div class="card_img3"></div>
+                </div>
+                <div class="sel_icon_human">인물</div>
+                <span class="title">고구려를 건국한 주몽</span></br>
+                <span class="content">코코몽 주몽 악몽 계몽 동상이몽 호접지몽 일장춘몽 남가일몽 빠삐루삥몽 활쏘다 힘풀렸몽 .</span></br>
+                <div class="divider"></div>
+                <div class="footBox">
+                    <span class="heart" id="heart3" onclick="likePlus3()">🤍</span>
+                    <span class = "count" id="like_count3">0</span>
+                    <span class="date">2024.04.23</span>
+
+                </div>
+            </div>
+            
+
+
+
+        </div>
+
+
+    </div>
+    <script>
+        let count1 = 0;
+        let count2 = 0;
+        let count3 = 0;
+        
+        function likePlus1() {
+            document.getElementById("heart1").textContent = "❤️";
+            document.getElementById("like_count1").textContent = ++count1;
+        }
+        function likePlus2() {
+            document.getElementById("heart2").textContent = "❤️";
+            document.getElementById("like_count2").textContent = ++count2;
+        }
+        function likePlus3() {
+            document.getElementById("heart3").textContent = "❤️";
+            document.getElementById("like_count3").textContent = ++count3;
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    <input type ="button" value="버튼클릭" onclick="동작()" />
+    <input type ="button" value="버튼클릭" onclick="prom2()" />
+    <input type ="button" value="버튼클릭" onclick="comf()" />
+    <script>
+
+        function 동작(){
+            console.log("동작");
+            //사용자에게 알림
+            alert('실행');
+        }
+
+        function prom2(){
+            const userAge = prompt('당신의 나이는?');
+            if(userAge <20){
+                alert("청소년입니다.");
+            }
+            else if(userAge >=20){
+                alert("성인입니다.");
+            }
+        }
+        //안 이쁘면,, 사용 x
+        //js만 사용하는 경우, 대상(만드는 사이트가 누가 사용 하느냐에 따라 인터페이스 결정)
+        // 일반 성인, 어린학생 등 사용이 많을 경우는 css로 꾸미시면 좋아요.
+
+
+        
+        function comf(){
+            //값을 true,false로 변환 받음
+            const eng = confirm("당신은 영어를 할 수 있나요?");
+            alert(eng);
+        }
+    </script>
+    
+</body>
+</html>

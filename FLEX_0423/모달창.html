@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모달창</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: none;
+        }
+
+        .modal_out {
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.534);
+            position: fixed;
+            top: 0;
+            left: 0;
+
+
+            display: none;            
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal_in {
+            width: 480px;
+            height: 360px;
+
+            background-color: white;
+            border-radius: 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>모달 창 </h1>
+
+    <input type="button" value="창 보이기" onclick="show_Modal()"/><br />
+    <img src="../asset/kuromi.jpeg" alt="귀여운캐릭" width="300" height="300" />
+
+    <div class="modal_out" id="hideClick">
+        <div class="modal_in" onclick="hide_Modal()">
+            바퀴벌레
+        </div>
+    </div>
+
+    <script>
+        let modal = document.getElementById("hideClick")
+
+        function hide_Modal(){
+            modal.style.display='none';
+        }
+        function show_Modal(){
+            modal.style.display='flex';
+            
+        }
+
+    </script>
+</body>
+
+</html>

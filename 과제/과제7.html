@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" placeholder="아이디 입력" id="id_id" />
+    <input type="text" placeholder="비밀번호 입력" id="pw_id" />
+    <input type="button" value="로그인" onclick="로그인()" />
+
+    <script>
+
+
+        function 로그인() {
+            let login = document.getElementById('id_id').value;
+
+            let pswd = document.getElementById('pw_id').value;
+
+            console.log(login + pswd);
+            if (login == "admin" && pswd == "1234") {
+                alert("로그인에 성공하였습니다.");
+            } else {
+                login.value = "";
+                pswd.value = "";
+                alert("로그인 실패");
+
+            }
+
+        }
+
+
+
+    </script>
+
+
+</body>
+
+</html>

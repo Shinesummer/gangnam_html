@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .target {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }.button {
+            
+        }
+    </style>
+</head>
+
+<body>
+    <input type="button" value="작다" onclick="small()" />
+    <input type="button" value="초록색" onclick="green()" />
+    <input type="button" value="검정색" onclick=" black()" />
+    <input type="button" value="크다" onclick="big()" /></br>
+    <input type="button" value="보이기" onclick="show()" />
+    <input type="button" value="사진1" onclick="pic1()" />
+    <input type="button" value="사진2" onclick=" pic2()" />
+    <input type="button" value="감추기" onclick="hide()" />
+
+    <div class="target" id="target"></div>
+
+    <script>
+        let size = 100;
+        const target = document.getElementById('target');
+
+        function small() {
+            size = size - 10;
+            target.style.width = size + 'px';
+            target.style.height = size + 'px';
+        }
+        function big() {
+            size = size + 10;
+            target.style.width = size + 'px';
+            target.style.height = size + 'px';
+        } function black() {
+            target.style.backgroundColor = 'black';
+        }
+        function green() {
+            target.style.backgroundColor = 'green';
+        }
+
+
+        function show() {
+            target.style.display = 'block';
+        } function pic1() {
+            target.style.backgroundImage = 'url("https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA1MTZfMTE5%2FMDAxNjUyNjkyMjQwNTkx.HRGxzS1cCDZ2RMKibS-G2CxHNCfegya90milfcKvkhAg.mgC-lJ5SJvX1G5XiuLRy5HD2nbzRhZmshjC66gdTV8wg.PNG.kwh7056%2Fimage.png&type=a340")';
+            target.style.backgroundSize = 'cover';
+        } function pic2() {
+            target.style.backgroundImage = 'url("https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjEyMjJfMjg4%2FMDAxNjcxNzE1NjA5NjQ0.ZX9Y8VVOnR763yPGrzNaJszyLVrLztnaaTpSAj7jyqsg.5-iVA1pRhyVokcK0ecPSMEjC8pI8k9J7Be_deV1pPuQg.JPEG.aurak2009%2Fb3dbe323bce9e9e83e98249ac4effc3df48d1a04%25A3%25DF20221216202116.jpg&type=a340")';
+            target.style.backgroundSize = 'cover';
+        } function hide() {
+            target.style.display = 'none';
+        }
+
+    </script>
+</body>
+
+</html>

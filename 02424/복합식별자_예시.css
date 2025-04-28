@@ -1,0 +1,26 @@
+body{
+    margin: 0px;
+    padding: 0;
+}
+.area_b{
+    width: 100vw;
+    height: 100vh;
+    background-color: green;
+}.area_b .container{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
+body{
+    margin: 0px;
+    padding: 0;
+}
+.area_a{
+    width: 100vw;
+    height: 100vh;
+    background-color: gray;
+}.area_a .container{
+    width: 100px;
+    height: 100px;
+    background-color: white;
+}

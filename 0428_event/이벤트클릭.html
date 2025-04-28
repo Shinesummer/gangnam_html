@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div_a {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            z-index: 2;
+        }
+
+        #out {
+            position: fixed;
+            top: 0px;
+            left: 0px;
+
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+            display: none;
+        }
+        ::placeholder{
+          color: rgb(217, 217, 217)  
+        }
+
+        body{
+            height: 300vh;
+        }
+    </style>
+</head>
+
+<body onload="로드()" onresize="창변경()" onscroll="스크롤()"> 
+    <h1>클릭</hq>
+        <input type="button" onclick="클릭1(5,'a')" value="클릭" />
+        <input type="button" ondblclick="클릭2()" value="더블클릭" />
+
+        <!-- 마우스를 누르는 그 순간. 동작 -->
+        <input type="button" onmousedown="클릭3()" value="마우스 다운" />
+        <!-- 마우스를 누르고 떼는 그 순간. 동작 -->
+        <input type="button" onmouseup="클릭4()" value="마우스 업" />
+        <div class="div_a" id="div_a" onmousemove="영역3()" onmouseover="영역1()" onmouseout="영역2()" unload="닫기()">
+            <!-- 디자인만하는사람은 hover사용  -->
+        </div>
+        <div id="out"></div>
+        <h1>키보드 이벤트</h1>
+<!-- 사용처  로그인,회원가입 유효성 검사, 검색기능 (게시판)
+            마우스를 사용하지 않았어도, 유효성검사 혹은 검색이 되는경우 -->
+        
+        <input type ="text" id="tar" placeholder="onkeydown" onkeydown="키보드1()"/><br/>
+        <input type ="text" id="tar2" placeholder="onkeyup" onkeyup="키보드2()"/><br/>
+        <input type ="text" id="tar3" placeholder="onkeypress" onkeypress="키보드3()"/><br/>
+        <input type ="text" placeholder="onkeyup" onkeyup="이벤트1(event)" onkeydown="엔터(event)"/><br/>
+
+
+<script>
+// 윈도우 이벤트 핸들러 (body가 적용 대상)
+
+
+//웹 페이지가 이미지,태그, 스크립트, css등 로딩(랜더링)이 완료될때 열림
+function 로드(){
+    alert('페이지 환영');
+}
+//해당 영역의 길이 혹은 높이가 변동이 감지 되었을때
+function 창변경(){ // onresize
+    console.log('창변경');
+    }
+    function 스크롤(){
+        console.log('abc');
+    }
+    function 닫기(){
+        alert('닫어');
+    }
+</script>
+
+
+
+
+
+
+<script>
+//키보드 이벤트 핸들러
+
+function 이벤트1(e){
+    const tar = e.target.value;
+    console.log(tar);
+}
+function 엔터(e){
+    
+    console.log(e.keyCode);
+    if(e.keyCode==13){
+        document.getElementById('tar').focus();
+    }
+}
+
+//키보드가 눌렀을 때, 인식
+function 키보드1(){
+const tar =document.getElementById('tar').value;
+console.log(tar);
+}
+//키보드에서 누른것을 땠을때
+function 키보드2(){
+const tar =document.getElementById('tar2').value;
+console.log(tar);
+}
+//손가락ㅇ ㅣ키보드를 누르는 순간
+function 키보드3(){
+const tar =document.getElementById('tar3').value;
+console.log(tar);
+}
+</script>
+
+        <script>
+            //마우스 이벤트 헨들러
+
+            // 좌 마우스 한번 클릭
+            function 클릭1(num, text) {
+                alert('num');
+                alert('text');
+
+            }
+
+            //더블클릭
+            function 클릭2() {
+                alert('db');
+            }
+            function 클릭3() {
+                alert('마우스 다운');
+            }
+            function 클릭4() {
+                alert("마우스 업");
+
+            }
+            //마우스 (영역안으로 나갔 을때) 아웃
+            function 영역2() {
+                document.getElementById('out').style.display = 'none';
+                document.getElementById('div_a').style.backgroundColor = 'blue';
+
+
+                //마우스 (영역안으로 들어왔을때) over
+            } function 영역1() {
+                // alert('a'); 
+                document.getElementById('out').style.display = 'block';
+                document.getElementById('div_a').style.backgroundColor = 'red';
+                // hover랑 같으나 색깔을 입힐 시 커서가 해당 좌표영역안에서 벗어날때 원래대로 돌아오지는 않는다.
+            } function 영역3() {
+                console.log('3');
+                //db연결하지말기
+            }
+
+
+        </script>
+
+</body>
+
+</html>

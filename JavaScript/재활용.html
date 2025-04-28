@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="test1" />
+
+    <input type="button" value="테스트" onclick="fn_test()" />
+
+    <script>
+        function fn_test() {
+            // html이 어디에 있는지 주소값을 저장
+            let test1 = document.getElementById('test1');
+            
+            // id가 test1이라는 테그에서 값을 갖고온다.
+            let test2 = document.getElementById('test1').value;
+
+            console.log(test1.value);
+            console.log(test2);
+
+            //변수 재활용
+            //test1.value = 'hello';
+            test2 = 'abc';
+        }
+    </script>
+</body>
+</html>

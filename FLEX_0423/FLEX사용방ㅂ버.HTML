@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex1</title>
+
+    <style>
+        .div_a {
+            border: 1px solid rebeccapurple;
+            width: 100px;
+            height: 100px;
+        }
+        .flex_a{
+            border: 2px solid blue;
+            display: flex;
+            flex-direction: row;
+            /*  column          = 가로줄로 나열
+                row             = 세로줄로 나열  >> default
+                column- reserse = 세로줄로 내림차순
+                row - reserse   = 가로줄로 내림차순
+                */
+            justify-content: center;
+            /*  진행방향에 따라 어디에 붙일 지 설정 . >> start, end, center 사용
+             */
+            justify-content: space-between;
+            gap: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex_a">
+        <div class="div_a">1</div>
+        <div class="div_a">2</div>
+        <div class="div_a">3</div>
+        <div class="div_a">4</div>
+        <div class="div_a">4</div>
+        <div class="div_a">4</div>
+        <div class="div_a">4</div>
+        
+        <!-- div , h1~h6 은 block이라 한줄을 다 사용함. -->
+    </div>
+</body>
+
+</html>

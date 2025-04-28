@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지</title>
+</head>
+<body>
+
+    <!-- 이미지를 불러오는 태그
+     src : 이미지를 불러오는 경로
+    alt : 이미지를 못 불러 올때, 표현되는 text,이미지 설명 -->
+    <img src="./kuromi1.jpeg"  alt="쿠로미"/>
+    <!-- 상대경로 : 현재 위치 . 으로 표시 (생략 가능)
+        생략조건, 같은 위치에 존재 했을 때때-->
+        <img src ="../asset/kuromirice.jpeg" akt="쿠로미"/>
+
+        <!-- 자식 폴더로 이동 시 [위치]/폴더명 -->
+         <!-- 부모 폴더로 이동 할때 ../         -->
+
+         <img src ="../asset/kuromi.jpeg" alt=" 쿠로미"/>
+        <!-- 절대경로 : 절대 경로의 최상위는 항상 /부터 시작-->
+         <img src="http://127.0.0.1:5500/HTML_Basic/kuromi1.jpeg" />
+    
+</body>
+</html>

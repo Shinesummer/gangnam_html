@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+
+
+
+.bagel-fat-one-regular {
+    font-family: "Bagel Fat One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .div_5{
+    border:1px solid brown;
+
+    font-family: "Bagel Fat One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center
+    /* 
+    em : 부모 태그에서 정의한 font-size 기준.
+        부모태그가 10px, 2em(200%) => 20px
+    rem : HTML에서 font-size를 정의 (기본 10px) ,상대적 크기가 결정
+    1rem = html font 기준 100% (10px => 1.8(180%) => 18px;
+    
+    */;
+    line-height: 1.8rem;    /* 줄 간격 */
+    letter-spacing: 1px;    /* 글자 간 간겨계( 자간)*/ 
+    word-spacing: 10px;     /* 단어 간 간격 */
+    text-indent: 80px;      /* 문단 첫 줄 들여쓰기 */
+  }
+  .div_6{
+    
+    font-family: "Bagel Fat One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    padding-right: 15px;
+    text-align: right;
+  }
+  a {
+    text-decoration: none;
+    color: hotpink;
+  }
+  .font_1{
+    font-size:20px;
+    font-weight:bold;
+    color: green;
+  }

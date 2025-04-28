@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- input 태그는 사용자가 입력 했을 시 event가 발생시키는 곳 중 가장 대표적인 요소-->
+    <!-- 버튼 <= 이벤트를 실행 하기위한 최소 조건-->
+    <!-- input( text -tel? email. pw )-->
+
+    <!-- input 중요 요소-->
+    <!-- type : 기능을 구분-->
+    <!-- value : 값 (사용자가 입력하는 값이 저장되는 공간)-->
+    <!-- 예외, 버튼계열은 버튼 내부의 text를 사용하는 용도로 사용-->
+    <!-- eventHandler , onClick -->
+    <!-- eventHandler명 = js 함수명 -->
+    <input type="button" value="클릭" onClick="clk_1()" />
+    <script>
+        let 변수a = 'hello world';
+        function clk_1(){
+            console.log(변수a);
+
+        }
+
+        //버튼을 클릭 시, hello world가 console창에 나왔으면 좋겠다.
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Text with Z-axis</title>
+  <style>
+    body {
+      background-color: black;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    
+      perspective: 10000px; 
+    }
+
+    .letter {
+      font-size: 200px;
+      font-weight: bold;
+      color: limegreen;
+      transform: rotateY(20deg); /* Z축 회전 */
+      text-shadow:
+        1px 1px 0 #00ffea,
+        2px 2px 0 #00cc00,
+        3px 3px 0 #009900,
+        4px 4px 0 #006600;
+      transition: transform 0.3s;
+    }
+
+    .letter:hover {
+      transform: rotateY(-720deg) scale(2); /* 반대방향 회전 + 확대 */
+      transition-duration: 3s;
+    }
+  </style>
+</head>
+<body>
+  <div class="letter">D</div>
+</body>
+</html>

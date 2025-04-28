@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!--    onsubmit은 자바와 상성이 매우 안좋음, 유효성검사 그런거 다 무시하고 보냄 
+        무조건!! @ get : 공유해도 되는것, post:공유하면 안되는것 (속도가 get보다 느림)
+        put, petchm del, search
+
+
+        submit은 javascript를 위해서 쓰는 기능은 아님
+        무조건 jsp를 호출하는 용도로 사용해서 사용빈도 거의 없음
+        물론 동작은 되지만, 사고를 먼저 치고, 사고예방(유효성 검사 기능 x)
+    -->
+    <form action="[보내는 장소]" method="">
+        <input type ="text" id ="inp" onkeyup="kye()" placeholder="이름" />
+        <input type ="radio" name ="nat" value="1" />대한민국
+        <input type ="radio" name ="nat" value="2" />미국
+
+        
+        <select onchange="체인지(event)" id="sel">
+            <option value="0">구분</option>
+            <option value="1">사각형</option>
+            <option value="2">사각형</option>
+            <option value="3">원</option>
+            <option value="4">삼각형</option>
+        </select>
+        <input type="submit"value="등록"/>
+    </form>
+
+    
+    <script>
+        //사용이 끝난 뒤, value가 변경안되면 
+        function kye(){
+            const tar =document.getElementById('inp');
+            console.log(tar.value);
+        }
+
+
+        function 체인지(e){
+        const val = e.target.value;
+            alert(val);
+        }
+    </script>
+</body>
+</html>

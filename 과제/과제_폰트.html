@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Nanum+Brush+Script&display=swap"
+        rel="stylesheet">
+    <style>
+        .div_back {
+            background-image: url('https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNTAzMTZfNCAg%2FMDAxNzQyMTE0NTQ2OTcw._RnezBQRtKPWDeX0_rwOBnTXfQWIotJwhkZHAzTKWPYg.IbFmyf7e2wt9uxAZZ3ntOH65RokMD3t5UiPv7P82I90g.PNG%2F1741683465672.png&type=ofullfill340_600_png');
+            position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  border: 4px solid black;
+        
+         
+            border: 5px solid rgb(9, 197, 25);
+            width: 320px;
+            height: 340px;
+            box-sizing: border-box;
+        }
+
+        .div_back::before {
+            content: '';
+            object-fit: cover;
+            position: absolute;
+            background-size: cover;
+            background-position: center;
+            inset: 0;
+            background: url('이미지경로.jpg') center/cover no-repeat;
+            opacity: 0.5;
+            /* ✅ 배경만 투명 */
+            z-index: 0;
+        }
+
+
+        .div_1 {
+            padding-left: 5px;
+            line-height: 1.8rem;
+            /* 줄 간격 */
+            letter-spacing: 1px;
+            /* 글자 간 간겨계( 자간)*/
+            word-spacing: 10px;
+            /* 단어 간 간격 */
+            text-indent: 80px;
+            /* 문단 첫 줄 들여쓰기 */
+
+
+            font-family: "Bagel Fat One", system-ui;
+            font-weight: 400;
+            font-style: normal;
+
+        }
+
+        .div_2 {
+            padding-left: 5px;
+
+            width: 320px;
+            height: 80px;
+            line-height: 1.8rem;
+            /* 줄 간격 */
+            letter-spacing: 0.5px;
+            /* 글자 간 간겨계( 자간)*/
+            word-spacing: 10px;
+            /* 단어 간 간격 */
+            font-size: 24px;
+
+            color: rgb(235, 11, 48);
+            font-family: "Bagel Fat One", system-ui;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .span_color {
+
+
+            color: red;
+
+            font-family: "Nanum Brush Script", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div_back">
+        <div class="div_1">
+            <span class="span_color">동해물과</span> 백두산이</br>
+
+            마르고 닳도록</br>
+
+            하느님이 보우하사</br>
+        </div>
+        <div class="div_2">
+            우리나라 만세</br>
+        </div>
+    </div>
+</body>
+
+</html>

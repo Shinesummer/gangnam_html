@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outBox {
+            background-image: url('../asset/엘리니아.jpg');
+            width: 100vw;
+            height: 100vh;
+            background-size: 100% 100% ;
+
+
+            position: relative;
+
+            overflow: hidden;
+        }
+        .inBox {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            z-index: 1;
+        }
+
+        .magicsion {
+            background-image: url('../asset/법사.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            top: 244px;
+            right: 600px;
+            width: 60px;
+            height: 80px;
+            position: absolute;
+            opacity: 1;
+            transition: transform 1s ease-in, opacity 1s ease-in;
+        }
+
+        .monster1 {
+            background-image: url('../asset/검은마법사.gif');
+            background-size: contain;
+            background-repeat: no-repeat;
+            top: 185px;
+            right: 60px;
+            width: 140px;
+            height: 140px;
+            position: absolute;
+        }
+
+        .monster2 {
+            background-image: url('../asset/에반용.gif');
+            background-size: contain;
+            background-repeat: no-repeat;
+            top: 55px;
+            right: 150px;
+            width: 400px;
+            height: 400px;
+            position: absolute;
+        }
+
+        .energybolt {
+            background-image: url('../asset/에너지볼트.png');
+            width: 15px;
+            height: 15px;
+
+
+            top: 280px;
+            right: 600px;
+
+            position: absolute;
+            background-size: contain;
+            display: none;
+        }
+
+        .actionbox {
+            cursor: pointer;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        div.active {
+            animation-name: test;
+            animation-delay: 0.5s;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outBox">
+        <input type="button" value="화면 클릭 : 공격  A: 뒤로가기  D : 앞으로 가기  Alt : 점프 " />
+        <div class="magicsion"></div>
+        <div class="monster1"></div>
+        <div class="monster2"></div>
+        <div class="monster3"></div>
+        <div class="energybolt"></div>
+        <div class="actionbox" onclick="흡입()"></div>
+    </div>
+    <script>
+        function 흡입() {
+            const outBox = document.querySelector('.outBox');
+            const magicsion = document.querySelector('.magicsion');
+            const monster = document.querySelector('.monster2');
+            const bolt = document.createElement('div');
+            bolt.className = 'energybolt';
+
+            const outBoxRect = outBox.getBoundingClientRect();
+            const magicsionRect = magicsion.getBoundingClientRect();
+            const monsterRect = monster.getBoundingClientRect();
+
+            // 캐릭터 기준 위치 (조금 조정)
+            const boltTop = magicsionRect.top - outBoxRect.top + 30;
+            const boltRight = outBoxRect.right - magicsionRect.right + 20;
+
+            // 에너지볼트 초기 위치 설정
+            bolt.style.top = `${boltTop}px`;
+            bolt.style.right = `${boltRight}px`;
+            bolt.style.display = 'block';
+
+            outBox.appendChild(bolt);
+
+            // 이동할 거리 계산 (캐릭터 -> 몬스터2 방향)
+            const deltaX = monsterRect.left + 260 - magicsionRect.right;
+            const deltaY = monsterRect.top + 120 - magicsionRect.top;
+
+            // translate로 애니메이션 실행
+            bolt.animate([
+                { transform: 'translate(0, 0)' },
+                { transform: `translate(${deltaX}px, ${deltaY}px)` }
+            ], {
+                duration: 1000,
+                easing: 'ease-in-out',
+                fill: 'forwards'
+            });
+
+            // 제거
+            setTimeout(() => {
+                bolt.remove();
+            }, 1000);
+        }
+
+        const magicsion = document.querySelector('.magicsion');
+        let topPos = 244;
+        let rightPos = 600;
+        let isJumping = false;
+
+        // 키보드 입력 감지
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'a') {
+                // 왼쪽 이동
+                rightPos += 20;
+                magicsion.style.right = `${rightPos}px`;
+            } else if (e.key === 'd') {
+                // 오른쪽 이동
+                rightPos -= 20;
+                magicsion.style.right = `${rightPos}px`;
+            } else if (e.altKey && !isJumping) {
+                // 점프 (Alt 키)
+                isJumping = true;
+
+                const jumpUp = magicsion.animate([
+                    { top: `${topPos}px` },
+                    { top: `${topPos - 100}px` }
+                ], {
+                    duration: 300,
+                    fill: 'forwards',
+                    easing: 'ease-out'
+                });
+
+                jumpUp.onfinish = () => {
+                    const jumpDown = magicsion.animate([
+                        { top: `${topPos - 100}px` },
+                        { top: `${topPos}px` }
+                    ], {
+                        duration: 300,
+                        fill: 'forwards',
+                        easing: 'ease-in'
+                    });
+
+                    jumpDown.onfinish = () => {
+                        isJumping = false;
+                    };
+                };
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>

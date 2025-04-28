@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            background-image: url('../asset/MapleStory_loginWindow.jpg');
+            background-size: 100% 100%;
+
+        }
+
+        /* .backimg{
+            position: absolute;
+            width: 1980px;
+            height: 970px;
+            background-image: url('../asset/MapleStory_loginWindow.jpg');
+            background-size: 100% 100%;
+        } */
+
+        #userId {
+            right: 24%;
+            top: 43.8%;
+            width: 21.6%;
+            height: 3.6%;
+            position: absolute;
+            background: transparent;
+            /* 배경 투명 */
+            border: none;
+            /* 테두리 제거 */
+            outline: none;
+            /* 포커스 테두리 제거 */
+            color: white;
+            /* 글씨 색상 (배경에 따라 조절) */
+            caret-color: white;
+            /* 커서 색상 (배경에 맞게 조절) */
+            font-size: 16px;
+            /* 텍스트 크기 */
+            padding: 5px 10px;
+            /* 내부 여백 */
+            font-weight: bold;
+            font-size: 1.8rem;
+
+        }
+
+        #userPw {
+            right: 24%;
+            top: 49.5%;
+            width: 21.6%;
+            height: 3.6%;
+            position: absolute;
+            background: transparent;
+            /* 배경 투명 */
+            border: none;
+            /* 테두리 제거 */
+            outline: none;
+            /* 포커스 테두리 제거 */
+            color: white;
+            /* 글씨 색상 (배경에 따라 조절) */
+            caret-color: white;
+            /* 커서 색상 (배경에 맞게 조절) */
+            font-size: 16px;
+            /* 텍스트 크기 */
+            padding: 5px 10px;
+            /* 내부 여백 */
+            font-weight: bold;
+            font-size: 1.9rem;
+
+        }
+        .loginWindow{
+            background-image: url('../asset/로그인화면.png');
+        }
+
+        #userId:focus {
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            /* 글씨 보이게 */
+
+            /* 커서 보이게 */
+            /* 배경 생김 */
+        }
+
+        .loginBtn {
+            background-image: url('../asset/mapleStroy_Login_only.png');
+            background-size: 100% 100%;
+
+            position: absolute;
+            width: 13.25%;
+            height: 11%;
+
+            display: flex;
+            top: 44%;
+            right: 9.5%
+        }
+
+        .registBtn {
+            background-image: url('../asset/login_가입하기.png');
+            background-size: 100% 100%;
+
+            position: absolute;
+            width: 12.2%;
+            height: 8%;
+
+            display: flex;
+            bottom: 26.7%;
+            right: 40.5%
+        }
+
+        .homepageBtn {
+            background-image: url('../asset/login_홈페이지.png');
+            background-size: 100% 100%;
+
+            position: absolute;
+            width: 12%;
+            height: 8%;
+
+            display: flex;
+            bottom: 26.8%;
+            right: 25.2%
+        }
+
+        .endBtn {
+            background-image: url('../asset/login_끝내기.png');
+            background-size: 100% 100%;
+
+            position: absolute;
+            width: 11%;
+            height: 8%;
+
+            display: flex;
+            bottom: 27%;
+            right: 11%
+        }
+    </style>
+</head>
+
+<body>
+    
+    <div class="backimg">
+        <input type="text" id="userId"   autocomplete="off"/>
+        <input type="text" id="userPw"  autocomplete="off"/>
+        <div class="loginBtn" style ="cursor: pointer;" onclick="login()"></div>
+        <div class="registBtn" style ="cursor: pointer;" onclick="registID()"></div>
+        <div class="homepageBtn" style ="cursor: pointer;" onclick="homepage()"></div>
+        <div class="endBtn" style ="cursor: pointer;" onclick="end()"></div>
+        
+    </div>
+
+    <script>
+
+        function login() {
+            alert="hi";
+            location.href = '../02424/애니메이션.html';
+        }
+        function registID() {
+            location.href = 'project.html';
+        }
+        function homepage() {
+            window.location.href = "https://maplestory.nexon.com/promotion/event/2025/20250417/intro?utm_source=naver&utm_medium=search&utm_campaign=22nd_1st&utm_content=pcbrand_button";
+            
+        } function end() {
+            window.close();
+        }
+
+
+    </script>
+</body>
+
+</html>

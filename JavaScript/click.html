@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type ="text" placeholder="이름을 입력하세요" id="text_id" /></br>
+    <input type ="text" placeholder="비밀번호를 입력하세요" id="text_pw" />
+    <input type ="submit"value ="클릭"   onclick="클릭()" /> 
+<script>
+
+    function 클릭(){
+        //태그중에서 id가 누구냐를 찾는 기능
+        //getElementByID();  >> element는 현재 페이지 전체
+
+        //getElementByID([아이디])
+        //getElementByID('text_id')
+
+        //컴퓨터 용어로 : dom
+        let inp_id = document.getElementById('text_id');
+        console.log(" 아이디 : "+inp_id.value);
+        let inp_pw = document.getElementById('text_pw');
+        console.log(" 비밀번호호 : "+inp_pw.value);
+
+    }
+</script>
+    
+</body>
+</html>

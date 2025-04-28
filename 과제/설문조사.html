@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>배경 이미지 예시</title>
+    <style>
+        body {
+            background-image: url('../asset/kuromi.jpeg');
+            background-size: cover;
+            /* 화면 가득 채우기 */
+            background-repeat: no-repeat;
+            /* 반복 안함 */
+            background-position: center;
+            /* 중앙 정렬 */
+
+        }
+        
+
+        .bgcolor {
+            width: 1200px;
+            height: 500px;
+            border: 5px solid rgb(223, 116, 214);
+            margin-top: 100px;
+            margin-left: 50px;
+            background-color: rgba(255, 159, 234, 0.7);
+            border-radius: 30px;
+            padding : 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bgcolor">
+
+        <h1>설문조사</h1>
+        <form>
+            <span> 참여자 :</span>
+            <input type="text" id="name_id" /><br />
+
+            <span> 좋아하는 도시 :</span>
+            <input type="radio" name="city" value="서울" /> 서울
+            <input type="radio" name="city" value="인천" /> 인천
+            <input type="radio" name="city" value="대전" /> 대전
+            <input type="radio" name="city" value="부산" /> 부산
+            <input type="radio" name="city" value="광주" /> 광주
+            <input type="radio" name="city" value="그외" /> 그외
+            <input type="text" id="city" /></br>
+
+            <span> 좋아하는 이유 :</span>
+            <input type="checkbox" name="todo" value="먹거리" /> 먹거리
+            <input type="checkbox" name="todo" value="레저" /> 레저
+            <input type="checkbox" name="todo" value="힐링" /> 힐링
+            <input type="checkbox" name="todo" value="교통" /> 교통
+            <input type="checkbox" name="todo" value="쇼핑" /> 쇼핑
+            <input type="checkbox" name="todo" value="관광" /> 관광</br>
+
+            <input type="button" value="제출" onclick='submit2()' />
+            <input type="reset" value="초기화" />
+
+        </form>
+
+    </div>
+
+
+    <script>
+
+        function submit2() {
+            const name = document.getElementById('name_id').value;
+            const luvCity = document.getElementsByName('city');
+            const luvReason = document.getElementsByName('todo');
+            let result = '';
+            for (let i = 0; i < luvCity.length; i++) {
+                if (luvCity[i].checked) {
+                    result = luvCity[i].value;
+                    if (result == "그외") {
+                        result = document.getElementById('city').value;
+                    }
+
+                }
+            }
+            let seltodo = '';
+            for (let i = 0; i < luvReason.length; i++) {
+                if (luvReason[i].checked) {
+                    seltodo += luvReason[i].value + ' ';
+
+                }
+            }
+
+            console.log("참여자이름 : " + name);
+            console.log("좋아하는 도시 : " + result);
+            console.log("좋아하는 이유 : " + seltodo)
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>

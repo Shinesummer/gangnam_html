@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <button onclick="showQuote()">명언 보기</button>
+    <p id="quote"></p>
+    <script>
+        const quotes = [
+            "오늘도 좋은 하루!",
+            "노력은 배신하지 않는다.",
+            "할 수 있다, 해보자!",
+            "매일 조금씩 나아지자."
+        ];
+
+        function showQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById("quote").innerText = quotes[randomIndex];
+
+            // floor 소수점 내림해서 정수로 만들기
+        }
+
+    </script>
+
+</body>
+
+</html>

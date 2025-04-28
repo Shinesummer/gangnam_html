@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- css를 여기 페이지 내에서 적용하고 싶을 때.-->
+     <!-- 내부 스타일 [2순위위]-->
+    <style>
+        /* css영역, 주석 방법 */
+        /* tag로 css 적용 할 수있음.*/
+        div{
+            border: 1px red soLId;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- DIV : 화면의 영역을 구분 짓기 위해서 사용-->
+     <!-- Division 약자-->
+      <div>
+            div
+            <!-- css적용, 인라인 스타일 [1순위] --> 
+             <div style = "border: 1px green solid;">
+             내부 div
+            </div>
+        </div>
+        <div>
+            <!-- 여기에 적으면 유지보수가 매우 나쁨.-->
+             ASDF
+        </div>
+</body>
+</html>
