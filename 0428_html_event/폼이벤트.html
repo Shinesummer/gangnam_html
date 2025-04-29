@@ -16,7 +16,7 @@
         물론 동작은 되지만, 사고를 먼저 치고, 사고예방(유효성 검사 기능 x)
     -->
     <form action="[보내는 장소]" method="">
-        <input type ="text" id ="inp" onkeyup="kye()" placeholder="이름" />
+        <input type ="text" id ="inp" onkeyup="kye(event)" placeholder="이름" />
         <input type ="radio" name ="nat" value="1" />대한민국
         <input type ="radio" name ="nat" value="2" />미국
 
@@ -35,8 +35,7 @@
     <script>
         //사용이 끝난 뒤, value가 변경안되면 
         function kye(){
-            const tar =document.getElementById('inp');
-            console.log(tar.value);
+      
         }
 
 
